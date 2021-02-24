@@ -10,16 +10,16 @@ import {
 } from "react-native";
 
 import { CATEGORIES } from "../data/dummy-data";
-
+// Components 
+import CategoryGridTile from "../components/CategoryGridTile";
 
 const CategoriesScreen = (props) => {
-
   const renderGridItem = (itemData) => {
     return (
-      <TouchableOpacity
-        style={styles.gridItem}
-        onPress={() => {
-          // params is how data will be passed. As many k-v pairs as needed
+      <CategoryGridTile
+        title={itemData.item.title}
+        color={itemData.item.color}
+        onSelect={() => {
           props.navigation.navigate({
             routeName: "CategoryMeals",
             params: {
@@ -27,11 +27,7 @@ const CategoriesScreen = (props) => {
             },
           });
         }}
-      >
-        <View>
-          <Text>{itemData.item.title}</Text>
-        </View>
-      </TouchableOpacity>
+      />
     );
   };
 
@@ -55,11 +51,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  gridItem: {
-    flex: 1,
-    margin: 15,
-    height: 150
-  }
 });
 
 export default CategoriesScreen;
