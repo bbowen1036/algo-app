@@ -3,14 +3,20 @@ import { View, Text, StyleSheet, Button, FlatList } from "react-native";
 
 import { CATEGORIES, MEALS } from "../data/dummy-data";
 import Colors from "../constants/Colors";
+import MealItem from "../components/MealItem";
 
 
 const CategoryMealScreen = (props) => {
   const renderMealItem = (itemData) => {
     return (
-      <View>
-        <Text>{itemData.item.title}</Text>
-      </View>
+      <MealItem
+        duration={itemData.item.duration}
+        title={itemData.item.title}
+        affordability={itemData.item.affordability}
+        complexity={itemData.item.complexity}
+        image={itemData.item.imageUrl}
+        onSelectMeal={() => {}}
+      />
     );
   };
 
@@ -24,6 +30,7 @@ const CategoryMealScreen = (props) => {
         data={displayMeals}
         keyExtractor={(item, index) => item.id}
         renderItem={renderMealItem}
+        style={{ width: "100%" }}
       />
     </View>
   );
@@ -50,7 +57,8 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    padding: 15
   }
 });
 
