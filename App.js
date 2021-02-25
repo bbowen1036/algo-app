@@ -3,7 +3,7 @@ import { enableScreens } from "react-native-screens"
 // Fonts 
 import * as Font from "expo-font"  // npm install expo-font
 import AppLoading from 'expo-app-loading';
-import { Ionicons } from "@expo/vector-icons"
+import { Ionicons } from '@expo/vector-icons';
 
 
 // Components
@@ -17,6 +17,7 @@ const fetchFonts = () => {
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
 };
+
 
 export default function App() {
 
