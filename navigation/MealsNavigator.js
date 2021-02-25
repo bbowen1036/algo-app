@@ -1,11 +1,13 @@
 import { Platform } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
+import { createBottomTabNavigator } from "react-navigation-tabs";
 
 // Screens
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryMealScreen from "../screens/CategoryMealScreen";
 import MealDetailScreen from "../screens/MealDetailScreen";
+import FavoritesScreen from "../screens/FavoritesScreen";
 import Colors from "../constants/Colors";
 
 const MealsNavigator = createStackNavigator(
@@ -32,5 +34,10 @@ const MealsNavigator = createStackNavigator(
   }
 );
 
+const MealsFavTabNavigator = createBottomTabNavigator({
+  Meals: MealsNavigator,
+  Favorites: FavoritesScreen
+});
+
 // createAppContainer is the pattern to wrap root using navigation
-export default createAppContainer(MealsNavigator)
+export default createAppContainer(MealsFavTabNavigator)
