@@ -9,8 +9,16 @@ import MealList from "../components/MealList";
 import HeaderButton from "../components/HeaderButton";
 
 const FavoritesScreen = (props) => {
+  const favMeals = useSelector((state) => state.meals.favoriteMeals);
 
-  const favMeals = useSelector(state => state.meals.favoriteMeals)
+  // render other info if favMeals is empty
+  if (favMeals.length === 0 || !favMeals) {
+    return (
+      <View style={styles.content}>
+        <Text>No favorites found. Start adding some!</Text>
+      </View>
+    );
+  }
 
   return <MealList listData={favMeals} navigation={props.navigation} />;
 };
@@ -27,5 +35,13 @@ FavoritesScreen.navigationOptions = (navData) => {
     ),
   }
 };
+
+const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});
 
 export default FavoritesScreen;
