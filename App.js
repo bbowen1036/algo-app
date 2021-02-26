@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { enableScreens } from "react-native-screens"
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
 // Fonts 
 import * as Font from "expo-font"  // npm install expo-font
 import AppLoading from 'expo-app-loading';
@@ -8,8 +10,18 @@ import { Ionicons } from '@expo/vector-icons';
 
 // Components
 import MealsNavigator from "./navigation/MealsNavigator";
+import mealsReducer from "./store/reducers/meals";
 
 enableScreens();  // behind the scenes it makes app optimized
+
+
+// Redux Store
+const rootReducer = combineReducers({
+  meals: mealsReducer
+})
+const store = createStore(rootReducer)
+
+
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -20,8 +32,7 @@ const fetchFonts = () => {
 
 
 export default function App() {
-
-  const [ fontLoaded, setFontLoaded ] = useState(false);
+  const [fontLoaded, setFontLoaded] = useState(false);
 
   if (!fontLoaded) {
     return (
@@ -34,6 +45,8 @@ export default function App() {
   }
 
   return (
-    <MealsNavigator />
+    <Provider store={store}>
+      <MealsNavigator />
+    </Provider>
   );
 }
