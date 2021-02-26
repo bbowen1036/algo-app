@@ -1,14 +1,20 @@
 import React from 'react';
+// Redux
+import { useSelector } from "react-redux";
 
-import { CATEGORIES, MEALS } from '../data/dummy-data';
+
+import { CATEGORIES } from '../data/dummy-data';
 import MealList from '../components/MealList';
 
 const CategoryMealScreen = props => {
-  
 
   const catId = props.navigation.getParam('categoryId');
 
-  const displayedMeals = MEALS.filter(
+  // UseSelector returns requested part of state. Here we want to display
+  // filtered meals. by default it will show all at the begininning or when no filters are set
+  const availableMeals = useSelector(state => state.meals.filteredMeals);
+
+  const displayedMeals = availableMeals.filter(
     meal => meal.categoryIds.indexOf(catId) >= 0
   );
 
