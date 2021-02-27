@@ -8,6 +8,9 @@ import { toggleFavorite } from "../store/actions/meals";
 // Components
 import HeaderButton from "../components/HeaderButton";
 import DefaultText from "../components/DefaultText";
+import Prompt from "../components/Prompt";
+import SyntaxHighlighter from 'react-native-syntax-highlighter';
+
 
 const ListItem = (props) => {
   return (
@@ -42,22 +45,30 @@ const MealDetailScreen = (props) => {
     props.navigation.setParams({ isFav: currentMealIsFavorite})
   }, [currentMealIsFavorite]);
 
+  const codeString = "function minChange(array) \n {if (array.length === 0) return 1";
   return (
     <ScrollView>
-      <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
+      {/* <Prompt propmt={selectedMeal.prompt} />  */}
+      <Prompt example={selectedMeal.example}>{selectedMeal.prompt}</Prompt>
+      {/* <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} /> */}
       <View style={styles.details}>
-        <DefaultText>{selectedMeal.duration}m</DefaultText>
-        <DefaultText>{selectedMeal.complexity.toUpperCase()}</DefaultText>
+        <DefaultText>time: {selectedMeal.duration}</DefaultText>
+        <DefaultText>space: {selectedMeal.complexity}</DefaultText>
         <DefaultText>{selectedMeal.affordability.toUpperCase()}</DefaultText>
       </View>
-      <Text style={styles.title}>Ingredients</Text>
+      <Text style={styles.title}>Pseudo Code</Text>
       {selectedMeal.ingredients.map((ingredient) => (
-        <ListItem key={ingredient}>{ingredient}</ListItem>
+        <ListItem key={ingredient}>* {ingredient}</ListItem>
       ))}
-      <Text style={styles.title}>steps</Text>
-      {selectedMeal.steps.map((step) => (
+      <Text style={styles.title}>Code Solution</Text>
+
+      <SyntaxHighlighter language="javascript" highlighter={"prism" || "hljs"}>
+        {selectedMeal.steps}
+      </SyntaxHighlighter>
+
+      {/* {selectedMeal.steps.map((step) => (
         <ListItem key={step}>{step}</ListItem>
-      ))}
+      ))} */}
     </ScrollView>
   );
 };
@@ -92,7 +103,8 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 200
+    height: 200,
+    backgroundColor: "#fca311"
   },
   title: {
     fontSize: 22,
@@ -104,6 +116,9 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     borderWidth: 1,
     padding: 10  
+  },
+  text: {
+    fontSize: 30
   }
 });
 

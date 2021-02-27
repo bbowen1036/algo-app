@@ -12,21 +12,25 @@ class Meal {
     isGlutenFree,
     isVegan,
     isVegetarian,
-    isLactoseFree
+    isLactoseFree,
+    prompt,
+    example
   ) {
     this.id = id,
-    this.categoryIds = categoryIds,
+    this.categoryIds = categoryIds,    // cat Id
     this.title = title,
     this.imageUrl = imageUrl,
-    this.affordability = affordability,
-    this.complexity = complexity,
-    this.duration = duration,
-    this.ingredients = ingredients,
-    this.steps = steps,
-    this.isGlutenFree = isGlutenFree, 
-    this.isVegan = isVegan, 
-    this.isVegetarian = isVegetarian,
-    this.isLactoseFree = isLactoseFree
+    this.affordability = affordability,   // Time
+    this.complexity = complexity,         // Space
+    this.duration = duration,             // level
+    this.ingredients = ingredients,      // Psudo
+    this.steps = steps,                  // code solution
+    this.isGlutenFree = isGlutenFree, // easy
+    this.isVegan = isVegan,            // med
+    this.isVegetarian = isVegetarian,  // hard
+    this.isLactoseFree = isLactoseFree,  // blackdiamond
+    this.prompt = prompt,
+    this.example = example
   }
 }
 

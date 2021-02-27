@@ -31,7 +31,7 @@ const MealsNavigator = createStackNavigator(
     Categories: {
       screen: CategoriesScreen,
       navigationOptions: {
-        headerTitle: "Meal Categories",
+        headerTitle: "Categories",
       },
     },
     CategoryMeals: {
@@ -61,6 +61,7 @@ const tabScreenConfig = {
       // tabBarIcon: (tabInfo) => {
       //   return <Ionicons name="ios-restaurant" size={25} color={tabInfo.tintColor} />
       // }
+      tabBarLabel: "Main"
     },
   },
   Favorites: {
@@ -100,7 +101,7 @@ const MainNavigator = createDrawerNavigator({
   MealsFavs: {
     screen: MealsFavTabNavigator,
     navigationOptions: {
-      drawerLabel: "Meals",
+      drawerLabel: "Menu",
     },
   },
   Filters: FiltersNavigator,
@@ -114,7 +115,7 @@ const MainNavigator = createDrawerNavigator({
 
 const styles = StyleSheet.create({
   font: {
-    fontFamily: "open-sans-bold"
+    // fontFamily: "open-sans-bold"
   }
 })
 

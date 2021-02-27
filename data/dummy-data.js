@@ -2,336 +2,247 @@ import Category from "../models/category";
 import Meal from "../models/meal";
 
 export const CATEGORIES = [
-  new Category('c1', 'Arrays', '#f5428d'),
-  new Category('c2', 'Strings', '#f54242'),
-  new Category('c3', 'Binary Search Trees', '#f5a442'),
-  new Category('c4', 'Binary Trees', '#f5d142'),
-  new Category('c5', 'Dynammic Programming', '#368dff'),
-  new Category('c6', 'Graphs', '#41d95d'),
-  new Category('c7', 'Link Lists', '#9eecff'),
-  new Category('c8', 'Recursion', '#b9ffb0'),
-  new Category('c9', 'Searching', '#ffc7ff'),
-  new Category('c10', 'Sorting', '#47fced')
+  new Category('c1', 'Arrays', '#14213d'),
+  new Category('c2', 'Strings', '#14213d'),
+  new Category('c3', 'Binary Search Trees', '#14213d'),
+  new Category('c4', 'Binary Trees', '#14213d'),
+  new Category('c5', 'Dynammic Programming', '#14213d'),
+  new Category('c6', 'Graphs', '#14213d'),
+  new Category('c7', 'Link Lists', '#14213d'),
+  new Category('c8', 'Recursion', '#14213d'),
+  new Category('c9', 'Searching', '#14213d'),
+  new Category('c10', 'Sorting', '#14213d')
 ];
-
+// 🟢🟠🔴⚫️
 export const MEALS = [
   new Meal(
-    'm1',
-    ['c1', 'c2'],
-    'Spaghetti with Tomato Sauce',
-    'affordable',
-    'simple',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
-    20,
+    "m1",
+    ["c1"],
+    "Two Number Sum",
+    "🟢",
+    "O(n)",
+    "https://oceanstar-seed.s3-us-west-1.amazonaws.com/Screen+Shot+2021-02-26+at+1.58.58+PM.png",
+    "O(n)",
     [
-      '4 Tomatoes',
-      '1 Tablespoon of Olive Oil',
-      '1 Onion',
-      '250g Spaghetti',
-      'Spices',
-      'Cheese (optional)'
+      "Use hash table to store remainder of Target - num",
+      "iterate thru numbers array",
+      "fill hash where k:v = remainder:idx",
+      "if has remainder as key then pair is found",
+      "return curridx and remainder idx",
     ],
     [
-      'Cut the tomatoes and the onion into small pieces.',
-      'Boil some water - add salt to it once it boils.',
-      'Put the spaghetti into the boiling water - they should be done in about 10 to 12 minutes.',
-      'In the meantime, heaten up some olive oil and add the cut onion.',
-      'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
-      'The sauce will be done once the spaghetti are.',
-      'Feel free to add some cheese on top of the finished dish.'
+      "const twoSum = function(nums, target) { \n  let hash = {};\n  for(let i = 0; i < nums.length; i++){\n     let curr = nums[i]\n     let remainder = target - curr\n\n     if(hash[curr] >= 0){\n        return [ hash[curr], i]\n     }  \n     hash[remainder] = i\n  }\n \n  return [];\n};\n        ",
     ],
+    true,
     false,
-    true,
-    true,
-    true
+    false,
+    false,
+    [
+      "Given an array of integers nums and an integer \ntarget, return indices of the two numbers such \nthat they add up to target. You may assume that \neach input would have exactly one solution, \nand you may not use the same element twice. \nYou can return the answer in any order.",
+    ],
+    [
+      "Input: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nOutput: Because nums[0] + nums[1] == 9, we return [0,1]",
+    ]
   ),
 
   new Meal(
-    'm2',
-    ['c2'],
-    'Toast Hawaii',
-    'affordable',
-    'simple',
-    'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
-    10,
+    "m2",
+    ["c1"],
+    "Validate Subsequence",
+    "🟢",
+    "O(1)",
+    "https://oceanstar-seed.s3-us-west-1.amazonaws.com/Screen+Shot+2021-02-26+at+1.58.58+PM.png",
+    "O(n)",
+    [""],
+    ["function isValidSubsequence(arr, seq) { \n  let arrIdx = 0;\n  let seqIdx = 0;\n\n  while (arrIdx < arr.length){\n    if (arr[arrIdx] === seq[seqIdx]) {\n      arrIdx++\n      seqIdx++\n    } else {\n      arrIdx++\n    }\n  }\n  return seqIdx === seq.length\n};"],
+    true,
+    false,
+    false,
+    false,
     [
-      '1 Slice White Bread',
-      '1 Slice Ham',
-      '1 Slice Pineapple',
-      '1-2 Slices of Cheese',
-      'Butter'
+      "Given two non-empty arrays of integers, write a \nfunction that determines whether the second array \nis a subsequence of the first one.",
     ],
     [
-      'Butter one side of the white bread',
-      'Layer ham, the pineapple and cheese on the white bread',
-      'Bake the toast for round about 10 minutes in the oven at 200Â°C'
-    ],
-    false,
-    false,
-    false,
-    false
+      "arr = [5, 1, 22, 25, 6, -1, 8, 10]\nsequence = [1, 6, -1, 10] \nexpected_output = true",
+    ]
   ),
 
   new Meal(
-    'm3',
-    ['c3'],
-    'Classic Hamburger',
-    'pricey',
-    'simple',
-    'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
-    45,
+    "m3",
+    ["c1"],
+    "Three Number Sum",
+    "🟠",
+    "O(n)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n^2)",
     [
-      '300g Cattle Hack',
-      '1 Tomato',
-      '1 Cucumber',
-      '1 Onion',
-      'Ketchup',
-      '2 Burger Buns'
+      "...",
+     
     ],
     [
-      'Form 2 patties',
-      'Fry the patties for c. 4 minutes on each side',
-      'Quickly fry the buns for c. 1 minute on each side',
-      'Bruch buns with ketchup',
-      'Serve burger with tomato, cucumber and onion'
+      "function threeNumSum(arr, target) {\n  const sorted = arr.sort((a, b) => a - b);\n  const res = [];\n\n  for (let i = 0; i < sorted.length - 2; i++) {\n    let j = i + 1;\n    let k = sorted.length - 1;\n    while (k > j) {\n      const currentSum = sorted[i] + sorted[j] + sorted[k];\n      if (currentSum < target) {\n        j++;\n      } else if (currentSum > targetSum) {\n        k--;\n      } else {\n        res.push([sorted[i], sorted[j], sorted[k]]);\n        k--;\n        j++;\n      }\n    }\n  }\n  return res;\n}",
+     
     ],
     false,
+    true,
     false,
     false,
-    true
+    ["Write a function that takes in a non-empty array \nof distinct integers and an integer representing a \ntarget sum. the function should find all triplets \nin the array that sum up to the target sum and \nreturn a two-dimensional array of the triplets. \nThe numbers should be ordered in ascending order"],
+    ["array = [12, 3, 1, 2, -6, 5, -8, 6] \ntargetSum = 0\noutput = [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]"]
   ),
 
   new Meal(
-    'm4',
-    ['c4'],
-    'Wiener Schnitzel',
-    'luxurious',
-    'challenging',
-    'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
-    60,
+    "m4",
+    ["c1"],
+    "Smallest Difference",
+    "🟠",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(nlog(n) + mlog(m))",
     [
-      '8 Veal Cutlets',
-      '4 Eggs',
-      '200g Bread Crumbs',
-      '100g Flour',
-      '300ml Butter',
-      '100g Vegetable Oil',
-      'Salt',
-      'Lemon Slices'
+      "...",
+      
     ],
     [
-      'Tenderize the veal to about 2â€“4mm, and salt on both sides.',
-      'On a flat plate, stir the eggs briefly with a fork.',
-      'Lightly coat the cutlets in flour then dip into the egg, and finally, coat in breadcrumbs.',
-      'Heat the butter and oil in a large pan (allow the fat to get very hot) and fry the schnitzels until golden brown on both sides.',
-      'Make sure to toss the pan regularly so that the schnitzels are surrounded by oil and the crumbing becomes â€˜fluffyâ€™.',
-      'Remove, and drain on kitchen paper. Fry the parsley in the remaining oil and drain.',
-      'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
+      'const smallestdiff = (arr1, arr2) => {\n  arr1.sort((a,b) => a-b);\n  arr2.sort((a,b) => a-b);\n\n  let idx1 = 0;\n  let idx2 = 0;\n  let smallest = Infinity;\n  let current = Infinity;\n  let smallestPair = [];\n\n  while (idx1 < arr1.length && idx2 < arr2.length) {\n    let num1 = arr1[idx1];\n    let num2 = arr2[idx2];\n\n    if (num1 < num2 ) {          \n      current = num2 - num1       \n      idx1++\n    } else if (num1 > num2) {\n      idx2++\n      current = num1 - num2\n    } else {\n      return [ arr1[idx1], arr2[idx2] ]\n    }\n\n    if (current < smallest) {\n      smallest = current;      \n      smallestPair = [ num1, num2 ]\n    }\n  }\n\n  return smallestPair\n};\n'
     ],
     false,
+    true,
     false,
     false,
-    false
+    ["Write a function that takes in two non-empty \narrays of integers, finds the pair of numbers \n(one from each array) whose absolute difference \nis closest to zero, and returns an array containing \nthese two numbers, with the number from the first \narray in the first position."],
+    ['arr1 = [-1, 5, 10, 20, 28, 3]\narr2 = [26, 134, 135, 15, 17]\noutput = [28, 26]']
   ),
 
   new Meal(
-    'm5',
-    ['c2', 'c5', 'c10'],
-    'Salad with Smoked Salmon',
-    'luxurious',
-    'simple',
-    'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
-    15,
+    "m5",
+    ["c1"],
+    "Move Element To End",
+    "🟠",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n)",
     [
-      'Arugula',
-      "Lamb's Lettuce",
-      'Parsley',
-      'Fennel',
-      '200g Smoked Salmon',
-      'Mustard',
-      'Balsamic Vinegar',
-      'Olive Oil',
-      'Salt and Pepper'
+      'left and right pointer\n if left === target stop and begin searching on right\n   if right pointer === target advance\n   if right pointer !== target\n     swap elements at that position\n' 
     ],
     [
-      'Wash and cut salad and herbs',
-      'Dice the salmon',
-      'Process mustard, vinegar and olive oil into a dessing',
-      'Prepare the salad',
-      'Add salmon cubes and dressing'
+      'const moveToEnd = (array, toMove) => {\n  let l = 0;\n  let r = array.length - 1;\n\n  while (l < r) {\n    if (array[l] === toMove) {\n      if (array[r] === toMove) {\n        r--;\n      } else {\n        [array[l], array[r]] = [array[r], array[l]];\n      }\n    } else {\n      l++;\n    }\n  }\n\n  return array;\n};\n' 
     ],
-    true,
     false,
     true,
-    true
+    false,
+    false,
+    ["You're given an array of integers and an integer. \nWrite a function that moves all the instances of \nthat integer in the array to the end of the array \nand returns the array"],
+    ['arr = [2, 1, 2, 2, 2, 3, 4, 2]\ntoMove = 2\noutput = [1, 3, 4, 2, 2, 2, 2, 2]']
   ),
 
   new Meal(
-    'm6',
-    ['c6', 'c10'],
-    'Delicious Orange Mousse',
-    'affordable',
-    'hard',
-    'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
-    240,
+    "m6",
+    ["c1"],
+    "Monotonic Array",
+    "🟠",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n)",
     [
-      '4 Sheets of Gelatine',
-      '150ml Orange Juice',
-      '80g Sugar',
-      '300g Yoghurt',
-      '200g Cream',
-      'Orange Peel'
+      "..",
+     
     ],
     [
-      'Dissolve gelatine in pot',
-      'Add orange juice and sugar',
-      'Take pot off the stove',
-      'Add 2 tablespoons of yoghurt',
-      'Stir gelatin under remaining yoghurt',
-      'Cool everything down in the refrigerator',
-      'Whip the cream and lift it under die orange mass',
-      'Cool down again for at least 4 hours',
-      'Serve with orange peel'
+      'const isMonotonic = (array) => {\n  let up = true;\n  let down = true;\n\n  for (let i = 0; i < array.length - 1; i++) {\n    if (array[i] < array[i + 1]) up = false;\n    if (array[i] > array[i + 1]) down = false;\n  }\n  return down || up;\n};'
     ],
-    true,
     false,
     true,
-    false
+    false,
+    false,
+    ["Write a function that takes in an array of \nintegers and returns a boolean representing \nwhether the array is monotonic.\n\nAn array is monotonic if its elements, from L to R, \nare entirely non-increasing or entirely non-\ndecreasing.\n\nNote that both empty and arrays of 1 element are monotonic."],
+    ["arr = [-1, -5, -10, -1100, -1100, -1101, -1102, -9001]\noutput = true"]
   ),
 
   new Meal(
-    'm7',
-    ['c7'],
-    'Pancakes',
-    'affordable',
-    'simple',
-    'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
-    20,
+    "m7",
+    ["c1"],
+    "Spiral Traverse",
+    "🟠",
+    "O(n)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n)",
     [
-      '1 1/2 Cups all-purpose Flour',
-      '3 1/2 Teaspoons Baking Powder',
-      '1 Teaspoon Salt',
-      '1 Tablespoon White Sugar',
-      '1 1/4 cups Milk',
-      '1 Egg',
-      '3 Tablespoons Butter, melted'
+      "...",
     ],
     [
-      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
-      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
-      'Heat a lightly oiled griddle or frying pan over medium high heat.',
-      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+      'function spiralTraverse(arr) {\n  let startRow = 0;\n  let endRow = arr.length - 1;\n  let startCol = 0;\n  let endCol = arr[0].length - 1;\n\n  const result = [];\n  while (startRow <= endRow && startCol <= endCol) {\n    // equal is important because we might end up w just needing to traverse a line (column or row)\n    for (col = startCol; col <= endCol; col++) {\n      result.push(arr[startRow][col]);\n    }\n    for (row = startRow + 1; row <= endRow; row++) {\n      result.push(arr[row][endCol]);\n    }\n    for (col = endCol - 1; col >= startCol; col--) {\n      result.push(arr[endRow][col]);\n    }\n    for (row = endRow - 1; row > startRow; row--) {\n      result.push(arr[row][startCol]);\n    }\n\n    startRow++;\n    startCol++;\n    endRow--;\n    endCol--;\n  }\n\n  return result;\n}' 
     ],
-    true,
     false,
     true,
-    false
+    false,
+    false,
+    ["Write a function that takes in an n x m \n2-dimensional array (that is square shapped n == m) \nand returns a one-dimensional arrat of all the \narrays elements in spiral order (clockwise). "],
+    ['array = [\n  [1,  2,  3,  4],\n  [12, 13, 14, 5],\n  [11, 16, 15, 6],\n  [10, 9,  8,  7]\n]\noutput = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]']
   ),
 
   new Meal(
-    'm8',
-    ['c8'],
-    'Creamy Indian Chicken Curry',
-    'pricey',
-    'challenging',
-    'https://cdn.pixabay.com/photo/2018/06/18/16/05/indian-food-3482749_1280.jpg',
-    35,
+    "m8",
+    ["c1"],
+    "Longest Peak",
+    "🟠",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n)",
     [
-      '4 Chicken Breasts',
-      '1 Onion',
-      '2 Cloves of Garlic',
-      '1 Piece of Ginger',
-      '4 Tablespoons Almonds',
-      '1 Teaspoon Cayenne Pepper',
-      '500ml Coconut Milk'
+      "...",
     ],
     [
-      'Slice and fry the chicken breast',
-      'Process onion, garlic and ginger into paste and sautÃ© everything',
-      'Add spices and stir fry',
-      'Add chicken breast + 250ml of water and cook everything for 10 minutes',
-      'Add coconut milk',
-      'Serve with rice'
+      'function longestPeak(arr) {\n  let peaks = []; // find all peaks\n  let longestPeakLength = 0;\n  let i = 1;\n\n  while (i < arr.length - 1) {\n    const isPeak = arr[i] > arr[i - 1] && arr[i] > arr[i + 1];\n    debugger;\n    if (!isPeak) {\n      i++;\n      continue;\n    }\n\n    let leftIdx = i - 2;\n    while (leftIdx >= 0 && arr[leftIdx] < arr[leftIdx + 1]) {\n      leftIdx--;\n    }\n    let rightIdx = i + 2;\n    while (rightIdx < arr.length && arr[rightIdx] < arr[rightIdx - 1]) {\n      rightIdx++;\n    }\n\n    let currPeakLength = rightIdx - leftIdx - 1;\n    longestPeakLength = Math.max(currPeakLength, longestPeakLength);\n    i = rightIdx;\n  }\n  return longestPeakLength;\n}' 
     ],
+    false,
     true,
     false,
     false,
-    true
+    ["Write a function that takes in an array on integers \nand returns the length of the longest peak in the \narray.\n\nA peak is defined as adjacent integers in the array \nthat are strictly increasing until they reach a tip \n(highest val in 'peak'), at which point they become \nstrictly decreasing. At least 3 integers are \nrequired to form a peak."],
+    ["arr = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]\noutput = 6 // 0, 10, 6, 5, -1, -3"]
   ),
 
   new Meal(
-    'm9',
-    ['c9'],
-    'Chocolate Souffle',
-    'affordable',
-    'hard',
-    'https://cdn.pixabay.com/photo/2014/08/07/21/07/souffle-412785_1280.jpg',
-    45,
+    "m9",
+    ["c2"],
+    "Longest Palindromic Substring",
+    "🟠",
+    "O(n)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n^2)",
     [
-      '1 Teaspoon melted Butter',
-      '2 Tablespoons white Sugar',
-      '2 Ounces 70% dark Chocolate, broken into pieces',
-      '1 Tablespoon Butter',
-      '1 Tablespoon all-purpose Flour',
-      '4 1/3 tablespoons cold Milk',
-      '1 Pinch Salt',
-      '1 Pinch Cayenne Pepper',
-      '1 Large Egg Yolk',
-      '2 Large Egg Whites',
-      '1 Pinch Cream of Tartar',
-      '1 Tablespoon white Sugar'
+      'odd palin = getlongestpalin passing string and pointer\n    reference to prev and next letters : i+1, i-1\neven palin = getlongestpalin, string, i-1, i \n' ,
     ],
     [
-      'Preheat oven to 190Â°C. Line a rimmed baking sheet with parchment paper.',
-      'Brush bottom and sides of 2 ramekins lightly with 1 teaspoon melted butter; cover bottom and sides right up to the rim.',
-      'Add 1 tablespoon white sugar to ramekins. Rotate ramekins until sugar coats all surfaces.',
-      'Place chocolate pieces in a metal mixing bowl.',
-      'Place bowl over a pan of about 3 cups hot water over low heat.',
-      'Melt 1 tablespoon butter in a skillet over medium heat. Sprinkle in flour. Whisk until flour is incorporated into butter and mixture thickens.',
-      'Whisk in cold milk until mixture becomes smooth and thickens. Transfer mixture to bowl with melted chocolate.',
-      'Add salt and cayenne pepper. Mix together thoroughly. Add egg yolk and mix to combine.',
-      'Leave bowl above the hot (not simmering) water to keep chocolate warm while you whip the egg whites.',
-      'Place 2 egg whites in a mixing bowl; add cream of tartar. Whisk until mixture begins to thicken and a drizzle from the whisk stays on the surface about 1 second before disappearing into the mix.',
-      'Add 1/3 of sugar and whisk in. Whisk in a bit more sugar about 15 seconds.',
-      'whisk in the rest of the sugar. Continue whisking until mixture is about as thick as shaving cream and holds soft peaks, 3 to 5 minutes.',
-      'Transfer a little less than half of egg whites to chocolate.',
-      'Mix until egg whites are thoroughly incorporated into the chocolate.',
-      'Add the rest of the egg whites; gently fold into the chocolate with a spatula, lifting from the bottom and folding over.',
-      'Stop mixing after the egg white disappears. Divide mixture between 2 prepared ramekins. Place ramekins on prepared baking sheet.',
-      'Bake in preheated oven until scuffles are puffed and have risen above the top of the rims, 12 to 15 minutes.'
+      'function longestPalinSub(str) {\n  let currlongest = "";\n\n  for(let i = 0; i < str.length; i++) {\n    let odd = getLongestPalin(str, i-1, i+1);\n    let even = getLongestPalin(str, i-1, i);\n\n    let longest = odd.length > even.length ? odd : even;\n    currlongest = currlongest.length >= longest.length ? currlongest : longest;\n  }\n\n  return currlongest;\n}\n\nfunction getLongestPalin(str, leftIdx, rightIdx) {\n  // takes in string and L/R pointers\n  // moves pointers outwards\n  // returns slice of string that is the longest palin. \n  while (leftIdx >= 0 && rightIdx < str.length) {\n    if(str[leftIdx] !== str[rightIdx]) {\n      break\n    }\n    leftIdx--;\n    rightIdx++;\n  }\n\n  return str.slice(leftIdx +1 , rightIdx)\n};' 
     ],
-    true,
     false,
     true,
-    false
+    false,
+    false,
+    ["Write a function that, given a string, returns its \nlongest palindromic substring"],
+    ["string = 'abaxyzzyxf'\n output = 'xyzzyx'"]
   ),
   new Meal(
-    'm10',
-    ['c2', 'c5', 'c10'],
-    'Asparagus Salad with Cherry Tomatoes',
-    'luxurious',
-    'simple',
-    'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
-    30,
+    "m10",
+    ["c2"],
+    "Valid IP Addresses",
+    "🟠",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(1)",
     [
-      'White and Green Asparagus',
-      '30g Pine Nuts',
-      '300g Cherry Tomatoes',
-      'Salad',
-      'Salt, Pepper and Olive Oil'
+      "White and Green Asparagus",
     ],
     [
-      'Wash, peel and cut the asparagus',
-      'Cook in salted water',
-      'Salt and pepper the asparagus',
-      'Roast the pine nuts',
-      'Halve the tomatoes',
-      'Mix with asparagus, salad and dressing',
-      'Serve with Baguette'
+      'function validIPAddresses(string) {\n  const ipAddressesFound = [];\n\n  if (string.length < 4) return [];\n\n  for (let i = 1; i < 4; i++) {\n    let currentIpAddressParts = ["", "", "", ""];\n\n    currentIpAddressParts[0] = string.slice(0, i);\n    if (!isValidPart(currentIpAddressParts[0])) continue;\n\n    for (let j = i + 1; j < i + 4; j++) {\n      currentIpAddressParts[1] = string.slice(i, j);\n      if (!isValidPart(currentIpAddressParts[1])) continue;\n\n      for (let k = j + 1; k < j + 4; k++) {\n        currentIpAddressParts[2] = string.slice(j, k);\n        currentIpAddressParts[3] = string.slice(k);\n\n        if (\n          isValidPart(currentIpAddressParts[2]) &&\n          isValidPart(currentIpAddressParts[3])\n        )\n          ipAddressesFound.push(currentIpAddressParts.join("."));\n      }\n    }\n  }\n  return ipAddressesFound;\n}\n\nfunction isValidPart(part) {\n  // takes in section as a string and converts to number\n  // checks validity in range AND for leading 0\'s\n  // checks by converting string to number then checking lengths. When converted number, preceding 0 will be dropped!\n  const partAsInt = Number(part);\n  if (partAsInt > 255) return false;\n\n  return part.length === String(partAsInt).length;\n}\n' 
     ],
+    false,
     true,
-    true,
-    true,
-    true
-  )
+    false,
+    false,
+    ["You're given a string of digits of length 12 or \nsmaller. Write a function that returns all of the \npossible IP addressess that can be created by \ninserting 3 '.'s in the string.\n\nAn IP is a seq of four positive integers that are \nseparated by '.'s where each indivdual integer is \nwithin the range 0 - 255, inclusive.\n\nAn IP is not valid if any of the individual integers \ncontains a leading 0. \n'192.168.0.1' is valid; '192.168.00.1' is not."],
+    ['string = "1921680" \noutput =  [\n  "1.9.216.80",\n  "1.92.16.80",\n  "1.92.168.0",\n  "19.2.16.80",\n  "19.2.168.0",\n  "19.21.6.80",\n  "19.21.68.0",\n  "19.216.8.0",\n  "192.1.6.80",\n  "192.1.68.0",\n  "192.16.8.0",\n];' ]
+  ),
 ];
