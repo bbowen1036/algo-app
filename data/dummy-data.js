@@ -11,7 +11,10 @@ export const CATEGORIES = [
   new Category('c7', 'Link Lists', '#14213d'),
   new Category('c8', 'Recursion', '#14213d'),
   new Category('c9', 'Searching', '#14213d'),
-  new Category('c10', 'Sorting', '#14213d')
+  new Category('c10', 'Sorting', '#14213d'),
+  new Category('c11', 'Famous Algorithms', '#14213d'),
+  new Category('c12', 'Project Euler', '#14213d'),
+
 ];
 // 🟢🟠🔴⚫️
 export const MEALS = [
@@ -233,7 +236,7 @@ export const MEALS = [
     "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
     "O(1)",
     [
-      "White and Green Asparagus",
+      "....",
     ],
     [
       'function validIPAddresses(string) {\n  const ipAddressesFound = [];\n\n  if (string.length < 4) return [];\n\n  for (let i = 1; i < 4; i++) {\n    let currentIpAddressParts = ["", "", "", ""];\n\n    currentIpAddressParts[0] = string.slice(0, i);\n    if (!isValidPart(currentIpAddressParts[0])) continue;\n\n    for (let j = i + 1; j < i + 4; j++) {\n      currentIpAddressParts[1] = string.slice(i, j);\n      if (!isValidPart(currentIpAddressParts[1])) continue;\n\n      for (let k = j + 1; k < j + 4; k++) {\n        currentIpAddressParts[2] = string.slice(j, k);\n        currentIpAddressParts[3] = string.slice(k);\n\n        if (\n          isValidPart(currentIpAddressParts[2]) &&\n          isValidPart(currentIpAddressParts[3])\n        )\n          ipAddressesFound.push(currentIpAddressParts.join("."));\n      }\n    }\n  }\n  return ipAddressesFound;\n}\n\nfunction isValidPart(part) {\n  // takes in section as a string and converts to number\n  // checks validity in range AND for leading 0\'s\n  // checks by converting string to number then checking lengths. When converted number, preceding 0 will be dropped!\n  const partAsInt = Number(part);\n  if (partAsInt > 255) return false;\n\n  return part.length === String(partAsInt).length;\n}\n' 
@@ -245,4 +248,67 @@ export const MEALS = [
     ["You're given a string of digits of length 12 or \nsmaller. Write a function that returns all of the \npossible IP addressess that can be created by \ninserting 3 '.'s in the string.\n\nAn IP is a seq of four positive integers that are \nseparated by '.'s where each indivdual integer is \nwithin the range 0 - 255, inclusive.\n\nAn IP is not valid if any of the individual integers \ncontains a leading 0. \n'192.168.0.1' is valid; '192.168.00.1' is not."],
     ['string = "1921680" \noutput =  [\n  "1.9.216.80",\n  "1.92.16.80",\n  "1.92.168.0",\n  "19.2.16.80",\n  "19.2.168.0",\n  "19.21.6.80",\n  "19.21.68.0",\n  "19.216.8.0",\n  "192.1.6.80",\n  "192.1.68.0",\n  "192.16.8.0",\n];' ]
   ),
-];
+  new Meal(
+    "m11",
+    ["c5"],
+    "Can Sum",
+    "🟢",
+    "O(n)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n)",
+    [
+      "....",
+    ],
+    [
+      'function canSum(targetNum, array, memo = {}) {\n  if (targetNum in memo) return memo[targetNum];\n  if (targetNum === 0) return true;\n  if (targetNum < 0) return false;\n\n  for (let num of array) {\n    let remainder = targetNum - num;\n    if (canSum(remainder, array, memo) === true) {\n      memo[targetNum] = true;\n      return true;\n    }\n  }\n  memo[targetNum] = false;\n  return memo[targetNum];\n}' 
+    ],
+    true,
+    false,
+    false,
+    false,
+    [""],
+    ['' ]
+  ),
+  new Meal(
+    "m12",
+    ["c7"],
+    "Doubly Linked List",
+    "🟠",
+    "*see notes",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "*see notes",
+    [
+      "....",
+    ],
+    [
+      ""
+    ],
+    false,
+    true,
+    false,
+    false,
+    [""],
+    ['' ]
+  ),
+  new Meal(
+    "m13",
+    ["c9"],
+    "Binary Search",
+    "🟢",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(log(n))",
+    [
+      '- Data must be sorted \n- finds idx by comparing middle element to target\n- if target < midElement -> search Left half\n- if target > midElement -> search Right half\n- use pointers to maintain true idx reference to array when making recursive calls\n- base case = when left overtakes right pointer' 
+    ],
+    [
+      'function bSearch(arr, target) {\n  return bSearchHelper(arr, target, 0, arr.length - 1);\n}\n\nfunction bSearchHelper(arr, target, left, right) {\n  if (left > right) return -1;\n  const midIdx = Math.floor((left + right) / 2);\n  const potentialMatch = arr[midIdx];\n\n  if (target === potentialMatch) {\n    return midIdx;\n  } else if (target < potentialMatch) {\n    return bSearchHelper(arr, target, left, midIdx - 1);\n  } else {\n    return bSearchHelper(arr, target, midIdx + 1, right);\n  }\n}'
+    ],
+    true,
+    false,
+    false,
+    false,
+    ["Write a function that takes in a sorted array of \nintegers as well as a target integer. The function \nshould use the Binary Search Algorithm to determine \nif the target integer is contained in the array \nand should return its index if it is, otherwise -1."],
+    ["array = [0, 1, 21, 33, 45, 45, 61, 71, 72, 73]\ntarget = 33 \noutput = 3" ]
+  ),
+]

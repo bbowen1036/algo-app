@@ -58,9 +58,9 @@ const MealDetailScreen = (props) => {
       </View>
       <Text style={styles.title}>Pseudo Code</Text>
       {selectedMeal.ingredients.map((ingredient) => (
-        <ListItem key={ingredient}>* {ingredient}</ListItem>
+        <ListItem key={ingredient}>{ingredient}</ListItem>
       ))}
-      <Text style={styles.title}>Code Solution</Text>
+      <Text style={styles.title}>Solution</Text>
 
       <SyntaxHighlighter language="javascript" highlighter={"prism" || "hljs"}>
         {selectedMeal.steps}
@@ -86,7 +86,7 @@ MealDetailScreen.navigationOptions = navigationData => {
     headerRight: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
-          title={ isFavorite ? "👎🏾" : "👍🏾" }
+          title={ isFavorite ? "💜" : "🤍" }
           // iconName="ios-star"
           onPress={toggleFavorite}
         />

@@ -13,6 +13,7 @@ import CategoryMealScreen from "../screens/CategoryMealScreen";
 import MealDetailScreen from "../screens/MealDetailScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import FiltersScreen from "../screens/FiltersScreen";
+import AboutScreen from "../screens/AboutScreen";
 import Colors from "../constants/Colors";
 
 const defaultStackNavOptions = {
@@ -97,6 +98,16 @@ const FiltersNavigator = createStackNavigator(
   }
 );
 
+const AboutNavigator = createStackNavigator(
+  {
+    About: AboutScreen
+  },
+  {
+    defaultNavigationOptions: defaultStackNavOptions
+  }
+);
+
+
 const MainNavigator = createDrawerNavigator({
   MealsFavs: {
     screen: MealsFavTabNavigator,
@@ -105,6 +116,8 @@ const MainNavigator = createDrawerNavigator({
     },
   },
   Filters: FiltersNavigator,
+  About: AboutNavigator
+
 }, {
   contentOptions: {
     activeTintColor: Colors.accentColor,
