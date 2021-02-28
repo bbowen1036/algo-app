@@ -325,11 +325,11 @@ export const MEALS = [
     [
       'function maxSubsetSumNonAdjacent(arr) {\n  if (arr.length === 0) return 0;\n  if (arr.length === 1) return arr[0];\n\n  let second = arr[0];\n  let first = Math.max(arr[1], arr[0]);\n\n  for (let i = 2; i < arr.length; i++) {\n    const currMax = Math.max(first, second + arr[i]);\n    second = first;\n    first = currMax;\n  }\n\n  return first\n};' 
     ],
+    false,
     true,
     false,
     false,
-    false,
-    ["Write a function that takes in a sorted array of \nintegers as well as a target integer. The function \nshould use the Binary Search Algorithm to determine \nif the target integer is contained in the array \nand should return its index if it is, otherwise -1."],
-    ["array = [0, 1, 21, 33, 45, 45, 61, 71, 72, 73]\ntarget = 33 \noutput = 3" ]
+    ["Write a function that takes in an array of positive \nintegers and returns the maximum sum of non-adjacent \nelements in the array."],
+    ["array = [75, 105, 120, 75, 90, 135]\noutput = 330 // 75 + 120 + 135" ]
   ),
 ]
