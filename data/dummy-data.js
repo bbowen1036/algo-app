@@ -311,4 +311,25 @@ export const MEALS = [
     ["Write a function that takes in a sorted array of \nintegers as well as a target integer. The function \nshould use the Binary Search Algorithm to determine \nif the target integer is contained in the array \nand should return its index if it is, otherwise -1."],
     ["array = [0, 1, 21, 33, 45, 45, 61, 71, 72, 73]\ntarget = 33 \noutput = 3" ]
   ),
+  new Meal(
+    "m14",
+    ["c5"],
+    "Max Sum Subset No Adjacent",
+    "🟠",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n)",
+    [
+      '- tabulated approach where maxSums = the maximum potential sum at every index (given the constraints)\n- second = arr[0] .... first = max(arr[0], arr[1])\n- currMax = max between: 1) first or 2) second + arr[i]\n- return the last value of maxSums as it is guaranteed to be the max possible value\n' 
+    ],
+    [
+      'function maxSubsetSumNonAdjacent(arr) {\n  if (arr.length === 0) return 0;\n  if (arr.length === 1) return arr[0];\n\n  let second = arr[0];\n  let first = Math.max(arr[1], arr[0]);\n\n  for (let i = 2; i < arr.length; i++) {\n    const currMax = Math.max(first, second + arr[i]);\n    second = first;\n    first = currMax;\n  }\n\n  return first\n};' 
+    ],
+    true,
+    false,
+    false,
+    false,
+    ["Write a function that takes in a sorted array of \nintegers as well as a target integer. The function \nshould use the Binary Search Algorithm to determine \nif the target integer is contained in the array \nand should return its index if it is, otherwise -1."],
+    ["array = [0, 1, 21, 33, 45, 45, 61, 71, 72, 73]\ntarget = 33 \noutput = 3" ]
+  ),
 ]
