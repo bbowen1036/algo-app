@@ -145,7 +145,7 @@ Brian Bowen - [LinkedIn](https://www.linkedin.com/in/brian-bowen-36456a7/)
 <br/>
 Email - <a href="mailto:bbowen1036@gmail.com">bbowen1036@gmail.com</a>
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/bbowen1036/algo-app](https://github.com/bbowen1036/algo-app)
 
 
 
