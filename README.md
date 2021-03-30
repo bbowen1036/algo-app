@@ -5,12 +5,12 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
+<!-- <p align="center">
   <a href="https://github.com/github_username/repo_name">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
-  <h2 align="center">ALGO APP</h2>
+  <h1 align="center">ALGO APP</h1>
 
   <p align="center">
     The study app that will help you ACE and pass your next technical interview!
@@ -36,9 +36,10 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Features</a>
+      <a href="#getting-started">Getting Started</a>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#features">Features</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -58,9 +59,6 @@
 </div>
 
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
 
 
 ### Built With
@@ -69,6 +67,8 @@ Here's a blank template to get started:
 * [React Native](https://reactnative.dev/)
 * [Redux]()
 * [Expo](https://expo.io/)
+* [Xcode](https://docs.expo.io/workflow/ios-simulator/)
+* [Android Studio](https://developer.android.com/studio)
 
 
 
@@ -79,59 +79,49 @@ Here's a blank template to get started:
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+<ul>
+  <li><a href="https://expo.io">Expo SDK</a></li>
+  <li><a href="https://docs.expo.io/workflow/ios-simulator/">Native iOs Simulator</a></li>
+</ul>
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/bbowen1036/algo-app
    ```
 2. Install NPM packages
    ```sh
    npm install
    ```
+3. Run app
+   ```sh
+   npm start
+   ```
+4. Launch Simulator
+   ```sh
+   [for iOs]: i
+   [for android]: a
+   ```
+
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<img src="./assets/2021-03-30 16.05.07.gif" >
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
 <!-- ROADMAP -->
-## Roadmap
+## Features
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+- ### Filter by level
+- ### Favorites tab
+- ### Stack and Drawer Navigators
 
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
@@ -144,14 +134,6 @@ Email - <a href="mailto:bbowen1036@gmail.com">bbowen1036@gmail.com</a>
 
 Project Link: [https://github.com/bbowen1036/algo-app](https://github.com/bbowen1036/algo-app)
 
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
 
 
 
@@ -171,7 +153,3 @@ Project Link: [https://github.com/bbowen1036/algo-app](https://github.com/bbowen
 [license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/github_username
-<video width="320" height="240" controls>
-  <source src="./assets/native-app.mp4" type="video/mp4">
- 
-</video>
