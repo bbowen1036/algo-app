@@ -119,8 +119,10 @@ To get a local copy up and running follow these simple steps.
 ## Features
 
 - ### Filter by level
+
 - ### Favorites tab
 - ### Stack and Drawer Navigators
+- ### Cross platform functionality with adaptable screen sizing
 
 
 
