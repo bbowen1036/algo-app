@@ -184,7 +184,7 @@ const ProblemsFavTabNavigator =
 ```
 const ProblemDetailScreen = (props) => {
   const availableProblems = useSelector((state) => state.problems.problems);
-  const mealId = props.navigation.getParam("problemId");
+  const problemId = props.navigation.getParam("problemId");
   const currentProblemIsFavorite = useSelector((state) =>
     state.problems.favoriteProblems.some((problem) => problem.id === problemId)
   );
