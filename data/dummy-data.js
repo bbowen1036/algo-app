@@ -332,4 +332,85 @@ export const MEALS = [
     ["Write a function that takes in an array of positive \nintegers and returns the maximum sum of non-adjacent \nelements in the array."],
     ["array = [75, 105, 120, 75, 90, 135]\noutput = 330 // 75 + 120 + 135" ]
   ),
+  new Meal(
+    "m13",
+    ["c9"],
+    "Binary Search",
+    "🟢",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(log(n))",
+    [
+      '- Data must be sorted \n- finds idx by comparing middle element to target\n- if target < midElement -> search Left half\n- if target > midElement -> search Right half\n- use pointers to maintain true idx reference to array when making recursive calls\n- base case = when left overtakes right pointer' 
+    ],
+    [
+      'function bSearch(arr, target) {\n  return bSearchHelper(arr, target, 0, arr.length - 1);\n}\n\nfunction bSearchHelper(arr, target, left, right) {\n  if (left > right) return -1;\n  const midIdx = Math.floor((left + right) / 2);\n  const potentialMatch = arr[midIdx];\n\n  if (target === potentialMatch) {\n    return midIdx;\n  } else if (target < potentialMatch) {\n    return bSearchHelper(arr, target, left, midIdx - 1);\n  } else {\n    return bSearchHelper(arr, target, midIdx + 1, right);\n  }\n}'
+    ],
+    true,
+    false,
+    false,
+    false,
+    ["Write a function that takes in a sorted array of \nintegers as well as a target integer. The function \nshould use the Binary Search Algorithm to determine \nif the target integer is contained in the array \nand should return its index if it is, otherwise -1."],
+    ["array = [0, 1, 21, 33, 45, 45, 61, 71, 72, 73]\ntarget = 33 \noutput = 3" ]
+  ),
+  new Meal(
+    "m15",
+    ["c5"],
+    "Min Coins For Change",
+    "🟠",
+    "O(n)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n*m)",
+    [
+      '- tabulation approach. use table of length target + 1.\n- problem asks to find `MIN` so fill to `Infinity`.\n- iterate on coins Array\n- nested iteration on tabulated \'ways\' Array\n- if coin <= amount (index at iteration) then we know we can make that amount\n- reset value at that index to the min of what is currently there, or \n- value at index of amt - coin   + 1 => ways[amt - coin] + 1'    ],
+    [
+      'function minNumCoins(target, nums) {\n  const ways = Array(target + 1).fill(Infinity);\n  ways[0] = 0;\n\n  for (let coin of nums) {\n    for (let amt = 1; amt < target + 1; amt++) {\n      if (coin <= amt) {\n        ways[amt] = Math.min(ways[amt], ways[amt - coin] + 1);\n      }\n    }\n  }\n\n  return ways[target] < Infinity ? ways[target] : -1;\n}'    ],
+    false,
+    true,
+    false,
+    false,
+    ["Given an array of positive integers and a single \nnon-neg integer `n` representing a target amount, \nwrite a function that returns the smallest number \nof coins needed to make change for the target. \nNote, you have unlimited access to the amount of \ncoins. If it's not possible to make target amount, \nreturn -1."],
+    ["array = [1, 5, 7]\ntarget = 7\noutput = 3" ]
+  ),
+  new Meal(
+    "m16",
+    ["c5"],
+    "Levenshtein Distance",
+    "🟠",
+    "O(min(n,m))",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n*m)",
+    [
+      '        ""    y     a     b     d\n""     0     1     2     3    4\n\na       1      1     1     2     3\n \nb       2     2     2     1     2\n\nc       3     3     3     2    2 \n\n\n- if letters being compared are equal -> no operation needed \n- else compare top, left, and diagonal value and take the MIN + 1'    ],
+    [
+      'function levenshteinDistance(str1, str2) {\n  const edits = [];\n\n  for (let i = 0; i < str2.length + 1; i++) {\n    const row = [];\n\n    for (let j = 0; j < str1.length + 1; j++) {\n      row.push(j);\n    }\n\n    row[0] = i;\n\n    edits.push(row);\n  }\n\n  for (let i = 1; i < str2.length + 1; i++) {\n    for (let j = 1; j < str1.length + 1; j++) {\n      if (str2[i - 1] === str1[j - 1]) {        // * chars are equal *\n        edits[i][j] = edits[i - 1][j - 1];\n      } else {\n        edits[i][j] =\n          1 + Math.min(edits[i - 1][j - 1], edits[i - 1][j], edits[i][j - 1]);\n      }\n    }\n  }\n\n  return edits[str2.length][str1.length];\n}\n'   
+    ],
+    false,
+    true,
+    false,
+    false,
+    ["Write a function that take in 2 strings and returns \nthe minimum number of edit operations that need to \nbe performed on the first string to obtain the \nsecond string. There are 3 edit operations: \nInsert, delete, and substitute."],
+    ["str1 = 'abc' | str2 = 'yabd'\noutput = 2 // insert `y`; substitute `c` for `d`" ]
+  ),
+  new Meal(
+    "m17",
+    ["c5"],
+    "Number of Ways to Traverse Graph",
+    "🟠",
+    "O(1)",
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg",
+    "O(n+m)",
+    [
+      ""
+    ],
+    [
+      ""
+    ],
+    false,
+    true,
+    false,
+    false,
+    ["You're given two pos integers representing the width \nand height of a grid-shaped rectangualr graph. \nWrite a function that retuns the number of ways to \nreach the bottom right corner when starting at the \ntop left corner. Each move you take must either go \ndown or right."],
+    ["width = 4  |  height = 3\noutput = 10" ]
+  ),
 ]
