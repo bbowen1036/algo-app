@@ -57,9 +57,9 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 <div>
-<img src="./assets/Screen Shot 2021-03-30 at 12.54.27 PM.png"  height="400" />
+<img src="./assets/Screen Shot 2021-03-30 at 12.54.27 PM.png"  height="500" />
 
-<img src="./assets/Screen Shot 2021-02-26 at 10.04.31 PM.png"  height="400" />
+<img src="./assets/Screen Shot 2021-02-26 at 10.04.31 PM.png"  height="500" />
 </div>
 
 
