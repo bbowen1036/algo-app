@@ -164,7 +164,21 @@ case SET_FILTERS:
 ```
 
 - ### <div style="color: red">Stack and Drawer Navigators
-- ### <div style="color: red">Cross platform functionality with adaptable screen sizing
+- ### <div style="color: red">Cross platform functionality with adaptable screen sizing</div>
+```
+
+const ProblemsFavTabNavigator =
+  Platform.OS === "android" && Platform.Version >= 21
+    ? createMaterialBottomTabNavigator(tabScreenConfig, {
+        activeColor: Colors.accentColor,
+        shifting: true,
+      })
+    : createBottomTabNavigator(tabScreenConfig, {
+        tabBarOptions: {
+          activeTintColor: Colors.accentColor,
+        },
+      });
+```
 - ### <div style="color: red">React Hooks
 
 
