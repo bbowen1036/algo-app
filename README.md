@@ -110,7 +110,7 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-<img src="./assets/2021-03-30 16.05.07.gif" >
+<img src="./assets/2021-03-30 16.05.07.gif" height="80%" width="80%" >
 
 
 
