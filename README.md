@@ -36,16 +36,9 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#getting-started">Features</a>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -56,6 +49,8 @@
 ## About The Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+<p>Part portfolio project, part personal study helper, it's a collection of various algorithm problems I've solved with detailed notes/pseudo code, solutions, and Big-O analysis. Key features of the project combining stack, tab, and drawer navigators, filter by difficulty, and a favorites section. Also, it's has cross-platform functionality with adaptable screen sizing.</p>
+<br/>
 <div>
 <img src="./assets/Screen Shot 2021-03-30 at 12.54.27 PM.png"  height="650" />
 
@@ -70,9 +65,11 @@ Here's a blank template to get started:
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [JavaScript]()
+* [React Native](https://reactnative.dev/)
+* [Redux]()
+* [Expo](https://expo.io/)
+
 
 
 
