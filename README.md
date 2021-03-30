@@ -119,7 +119,34 @@ To get a local copy up and running follow these simple steps.
 ## Features
 
 - ### Filter by level
+```
 
+const initialState = {
+  problems: PROBLEMS,
+  filteredProblems: PROBLEMS,
+  favoriteProblems: [],
+};
+------------------------------
+case SET_FILTERS:
+      const appliedFilters = action.filters;
+      const updatedFilteredProblems = state.problems.filter(problem => {
+        if (appliedFilters.easy && problem.isEasy) {
+          return true
+        }
+        if (appliedFilters.medium && problem.isMedium) {
+          return true
+        }
+        if (appliedFilters.hard && problem.isHard) {
+          return true
+        }
+        if (appliedFilters.blackDiamond && problem.isBlackDiamond) {
+          return true
+        }
+        return false
+      });
+
+      return { ...state, filteredProblems: updatedFilteredProblems}
+```
 - ### Favorites tab
 - ### Stack and Drawer Navigators
 - ### Cross platform functionality with adaptable screen sizing
