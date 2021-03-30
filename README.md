@@ -118,7 +118,7 @@ To get a local copy up and running follow these simple steps.
 <!-- ROADMAP -->
 ## Features
 
-- ### Filter by level
+- ### <div style="color: red">Filter by level</div>
 ```
 
 const initialState = {
@@ -147,9 +147,25 @@ case SET_FILTERS:
 
       return { ...state, filteredProblems: updatedFilteredProblems}
 ```
-- ### Favorites tab
-- ### Stack and Drawer Navigators
-- ### Cross platform functionality with adaptable screen sizing
+- ### <div style="color: red">Favorites tab</div>
+```
+    case TOGGLE_FAVORITE:
+      const existingIndex = state.favoriteProblems.findIndex(
+        (problem) => problem.id === action.problemId
+      );
+      if (existingIndex >= 0) {   // problem is already in favorites -> need to remove
+        const updatedFavProblems = [ ...state.favoriteProblems ];
+        updatedFavProblems.splice(existingIndex, 1)
+        return { ...state, favoriteProblems: updatedFavProblems }
+      } else {
+        const problem = state.Problems.find(problem => problem.id === action.problemId);
+        return { ...state, favoriteProblems: state.favoriteProblems.concat(problem)}
+      }
+```
+
+- ### <div style="color: red">Stack and Drawer Navigators
+- ### <div style="color: red">Cross platform functionality with adaptable screen sizing
+- ### <div style="color: red">React Hooks
 
 
 
