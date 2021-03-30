@@ -181,7 +181,34 @@ const ProblemsFavTabNavigator =
 ```
 - ### <div style="color: red">React Hooks
 
+```
+const ProblemDetailScreen = (props) => {
+  const availableProblems = useSelector((state) => state.problems.problems);
+  const mealId = props.navigation.getParam("problemId");
+  const currentProblemIsFavorite = useSelector((state) =>
+    state.problems.favoriteProblems.some((problem) => problem.id === problemId)
+  );
 
+  const selectedProblem = availableProblems.find((problem) => problem.id === problemId);
+
+  const dispatch = useDispatch();
+
+  const toggleFavoriteHandler = useCallback(() => {
+    dispatch(toggleFavorite(problemId));
+  }, [dispatch, problemId]);
+
+  useEffect(() => {
+    // props.navigation.setParams({problemTitle: selectedProblem.title})
+    props.navigation.setParams({ toggleFav: toggleFavoriteHandler });
+  }, [toggleFavoriteHandler]);
+
+
+  useEffect(() => {
+    props.navigation.setParams({ isFav: currentProblemIsFavorite})
+  }, [currentProblemIsFavorite]);
+
+  .... }
+  ```
 
 
 <!-- CONTACT -->
