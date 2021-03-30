@@ -57,9 +57,9 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 <div>
-<img src="./assets/Screen Shot 2021-03-30 at 12.54.27 PM.png"  height="500" />
+<img src="./assets/Screen Shot 2021-03-30 at 12.54.27 PM.png"  height="650" />
 
-<img src="./assets/Screen Shot 2021-02-26 at 10.04.31 PM.png"  height="500" />
+<img src="./assets/Screen Shot 2021-02-26 at 10.04.31 PM.png"  height="650" />
 </div>
 
 
@@ -141,7 +141,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Brian Bowen - [LinkedIn](https://www.linkedin.com/in/brian-bowen-36456a7/) 
+<br/>
+Email - <a href="mailto:bbowen1036@gmail.com">bbowen1036@gmail.com</a>
 
 Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
